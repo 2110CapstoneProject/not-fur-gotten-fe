@@ -1,0 +1,12 @@
+name: run-tests
+on: [push]
+jobs:
+  run-tests:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.0
+      - name: Cypress.io 
+        uses: cypress-io/github-action@v2.9.7
+        with: 
+          start: npm start
