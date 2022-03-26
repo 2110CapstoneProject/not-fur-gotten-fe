@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import '../Styles/App.scss';
 import Home from './Home';
 import Pet from './Pet';
@@ -11,12 +11,16 @@ import Error from './Error';
 function App() {
   return (
     <div className="App">
-      <Home />
-      <Pet />
-      <PetApplications />
-      <Error />
+      <Routes>
+        <Route path="/"  element={<Home />} />
+        <Route path="pet/:id" element={<Pet />} /> 
+        <Route path="pet/:id/applications" element={<PetApplications />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
     </div>
   );
 }
+
+//use params
 
 export default App;
