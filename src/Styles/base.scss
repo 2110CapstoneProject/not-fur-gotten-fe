@@ -1,0 +1,17 @@
+@import "./reset";
+@import "./keyframes";
+@import "./mixins";
+@import "./variables";
+@import "./App.scss";
+@import "./Error.scss";
+@import "./Home.scss";
+@import "./Pet.scss";
+@import "./PetApplications.scss";
+@import "./PetCard.scss";
+@import "./PetContainer.scss";
+
+body, html {
+  height: 100%;
+  
+}
+
