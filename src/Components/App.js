@@ -1,12 +1,20 @@
 import React from 'react';
-import './Styles/App.scss';
+import { Route } from 'react-router-dom';
+import '../Styles/App.scss';
+import Home from './Home';
+import Pet from './Pet';
+import PetApplications from './PetApplications';
+import Error from './Error';
 
 
 
 function App() {
   return (
     <div className="App">
-     Hi friends!
+      <Home />
+      <Pet />
+      <PetApplications />
+      <Error />
     </div>
   );
 }
