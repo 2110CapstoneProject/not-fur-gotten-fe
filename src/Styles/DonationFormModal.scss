@@ -1,3 +1,5 @@
+@import './_variables';
+
 .modal {
   position: fixed;
   left: 0;
@@ -10,11 +12,53 @@
   justify-content: center;
 }
 
-form {
+.form-title {
+  align-self: flex-start;
+  font-size: xx-large;
+}
+
+.form-subtitle {
+  width: fit-content;
+  font-size: x-large;
+}
+
+.donation-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  background: white;
+  background: #f6f5fa;
   height: 650px;
+  box-sizing: border-box;
+  padding: 5px 50px;
+}
+
+.owner-info-container {
+  height: 225px;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-info-container {
+  height: 260px;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  resize: none;
+  font-family: inherit;
+}
+
+.owner-name-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.submit-button {
+  width: 100px;
 }
