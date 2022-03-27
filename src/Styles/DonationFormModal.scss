@@ -28,35 +28,58 @@
   justify-content: space-evenly;
   align-items: center;
   background: #f6f5fa;
-  height: 650px;
+  height: 660px;
+  width: 650px;
   box-sizing: border-box;
   padding: 5px 50px;
 }
 
 .owner-info-container {
-  height: 225px;
+  height: 250px;
   width: 100%;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
 }
 
-.pet-info-container {
-  height: 260px;
+.pet-info-section {
+  height: 290px;
   width: 100%;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+}
+
+.pet-details-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 textarea {
   resize: none;
   font-family: inherit;
+  width: 99%;
 }
 
 .owner-name-container {
   display: flex;
-  justify-content: flex-start;
+  width: 57.5%;
+  justify-content: space-between;
+}
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  font-size: small;
+  text-align: left;
+}
+
+#age {
+  width: 70px;
 }
 
 .submit-button {
