@@ -12,7 +12,7 @@
 
 body, html {
   height: 100%;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 h1,
@@ -20,9 +20,18 @@ h2 {
   font-family: 'Fredoka One', cursive;
 }
 
+h3,
+p,
+label,
+button,
+textarea,
+input,
+::placeholder {
+  font-family: inherit;
+}
+
 textarea {
   resize: none;
-  font-family: inherit;
   width: 99%;
 }
 
@@ -55,5 +64,16 @@ textarea {
 }
 
 .submit-button {
+  background-color: $darkPurple;
+  color: $white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
   width: 100px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
 }
+
