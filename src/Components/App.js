@@ -5,7 +5,7 @@ import Home from './Home';
 import Pet from './Pet';
 import PetApplications from './PetApplications';
 import Error from './Error';
-
+import DonationFormModal from './DonationFormModal';
 
 
 function App() {
@@ -13,7 +13,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/"  element={<Home />} />
-        <Route path="pet/:id" element={<Pet />} /> 
+        <Route path="form" element={<DonationFormModal />} />
+        <Route path="pet/:id" element={<Pet />} />
         <Route path="pet/:id/applications" element={<PetApplications />} />
         <Route path="*" element={<Error />} />
       </Routes>
