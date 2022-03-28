@@ -3,8 +3,8 @@ import '../Styles/DonationFormModal.scss';
 
 const DonationFormModal = () => {
   const [formState, setFormState] = useState({
-    firstName: '',
-    lastName: '',
+    ownerName: '',
+    ownerEmail: '',
     ownerStory: '',
     petName: '',
     age: '',
@@ -21,32 +21,32 @@ const DonationFormModal = () => {
           <h3 className="form-subtitle">Owner Information</h3>
           <div className="owner-name-container">
             <div className="input-label">
-              <label htmlFor="firstName">First Name</label>
+              <label htmlFor="ownerName">Full Name</label>
               <input
                 type="text"
-                value={formState.firstName}
-                id="firstName"
-                placeholder="e.g. Samantha"
+                value={formState.fullName}
+                id="ownerName"
+                placeholder="e.g. Samantha Taylor"
                 onChange={(e) =>
                   setFormState({
                     ...formState,
-                    firstName: e.target.value
+                    ownerName: e.target.value
                   })
                 }
                 required
               />
             </div>
             <div className="input-label">
-              <label htmlFor="lastName">Last Name</label>
+              <label htmlFor="ownerEmail">Email</label>
               <input
                 type="text"
-                value={formState.lastName}
-                id="lastName"
-                placeholder="e.g. Taylor"
+                value={formState.ownerEmail}
+                id="ownerEmail"
+                placeholder="e.g. samantha.taylor@gmail.com"
                 onChange={(e) =>
                   setFormState({
                     ...formState,
-                    lastName: e.target.value
+                    ownerEmail: e.target.value
                   })
                 }
                 required
