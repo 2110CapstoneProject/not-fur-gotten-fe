@@ -10,7 +10,7 @@ const ApplicationFormModal = () => {
 
     return (
         <div className='modal'>
-            <form className='application-form'>
+            <form className='application-form' onSubmit={(e) => e.preventDefault()}>
                 <h2 className='form-title'> Application Form</h2>
                 <section className='applicant-info-container'>
                     <h3 className='form-subtitle'>Contact Information</h3>
