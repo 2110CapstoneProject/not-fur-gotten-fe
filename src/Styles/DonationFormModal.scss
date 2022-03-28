@@ -31,19 +31,25 @@
   height: 660px;
   width: 650px;
   box-sizing: border-box;
-  padding: 5px 50px;
+  padding: 10px 50px;
 }
 
 .owner-info-container {
-  height: 250px;
+  height: 220px;
   width: 100%;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
 }
 
+.owner-name-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .pet-info-section {
-  height: 290px;
+  height: 265px;
   width: 100%;
   justify-content: space-between;
   display: flex;
@@ -55,16 +61,9 @@
   justify-content: space-between;
 }
 
-textarea {
-  resize: none;
-  font-family: inherit;
-  width: 99%;
-}
-
-.owner-name-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+#ownerStory,
+#petDescription {
+  height: 115px;
 }
 
 .input-label {
@@ -79,6 +78,10 @@ textarea {
 
 #ownerEmail {
   width: 275px;
+}
+
+#gender {
+  height: 25px;
 }
 
 label {
