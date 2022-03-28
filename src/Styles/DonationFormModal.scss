@@ -63,7 +63,7 @@ textarea {
 
 .owner-name-container {
   display: flex;
-  width: 57.5%;
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -73,6 +73,14 @@ textarea {
   align-items: flex-start;
 }
 
+#ownerName {
+  width: 235px;
+}
+
+#ownerEmail {
+  width: 275px;
+}
+
 label {
   font-size: small;
   text-align: left;
@@ -80,8 +88,4 @@ label {
 
 #age {
   width: 70px;
-}
-
-.submit-button {
-  width: 100px;
 }
