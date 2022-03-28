@@ -12,10 +12,68 @@
 
 body, html {
   height: 100%;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 h1,
 h2 {
   font-family: 'Fredoka One', cursive;
 }
+
+h3,
+p,
+label,
+button,
+textarea,
+input,
+::placeholder {
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+  width: 99%;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-title {
+  align-self: flex-start;
+  font-size: xx-large;
+}
+
+.form-subtitle {
+  width: fit-content;
+  font-size: x-large;
+}
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.submit-button {
+  background-color: $darkPurple;
+  color: $white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+}
+
