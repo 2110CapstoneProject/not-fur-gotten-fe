@@ -2,6 +2,7 @@
 
 .upperSection {
   display: flex;
+  flex-direction: column;
   background-color: $darkPurple;
   color: $white;
   height: 300px;
