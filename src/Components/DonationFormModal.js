@@ -162,6 +162,7 @@ const DonationFormModal = () => {
           <div className="input-label">
             <label htmlFor="imageUpload">Add an image of your pet:</label>
             <input
+              data-testid="image-upload"
               type="file"
               value={formState.imageUpload}
               id="imageUpload"
