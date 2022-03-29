@@ -7,9 +7,7 @@ const Home = () => {
   return (
     <div>
       <section className='upperSection'>
-        <div>
-          <Header />
-        </div>
+        <Header />
         <h1>Find a forever home for your best friend</h1>
       </section>
       <PetContainer />
