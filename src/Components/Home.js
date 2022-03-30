@@ -1,7 +1,8 @@
 import React from 'react';
-import '../Styles/Home.scss';
 import PetContainer from './PetContainer';
 import Header from './Header';
+import '../Styles/Home.scss';
+
 
 const Home = () => {
   return (
