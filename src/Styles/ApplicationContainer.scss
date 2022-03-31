@@ -1,0 +1,12 @@
+@import '_variables.scss';
+
+.application-container {
+  margin-top: 50px;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 100vh;
+
+}
