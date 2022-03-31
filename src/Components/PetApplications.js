@@ -1,9 +1,15 @@
 import React from 'react';
+import Header from './Header';
+import ApplicationContainer from './ApplicationsContainer';
 import '../Styles/PetApplications.scss';
 
 const PetApplications = () => {
   return (
-    <h1>Pet Application</h1>
+    <section>
+      <Header />
+      <h2 className='application-title'>Applications for *PetName*</h2>
+      <ApplicationContainer />
+    </section>
   )
 }
 
