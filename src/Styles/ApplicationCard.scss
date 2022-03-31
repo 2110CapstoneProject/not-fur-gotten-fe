@@ -1,0 +1,42 @@
+@import '_variables.scss';
+
+.application-card {
+  background-color: $lightPurple;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 75%;
+  height: 200px;
+  box-shadow: 8px 8px 9px grey;
+  border-radius: 10px;
+}
+
+.applicant-name {
+  font-size: xx-large;
+  max-width: 25%;
+  overflow-wrap: break-word;
+}
+
+.applicant-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 70%;
+  height: 77%
+}
+
+.email,
+.intro-label {
+  font-size: x-large;
+  color: $darkPurple;
+}
+
+.intro {
+  font-size: x-large;
+  text-align: left;
+  overflow: auto;
+  height: 100%;
+  font-weight: 200;
+}
