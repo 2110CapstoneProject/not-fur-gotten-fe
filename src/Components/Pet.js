@@ -2,15 +2,6 @@ import React from 'react';
 import '../Styles/Pet.scss';
 import Header from './Header';
 
-//Posting happens before querying
-//Then query
-//Then data flows down from the query.
-
-//This is pulling the information posted from the 
-//On click of card, 
-//Pet ID from pet card
-//Pulls data to this component?
-//Or graphQL query can pull the info we need into this component?
 
 const Pet = () => {
   return (
