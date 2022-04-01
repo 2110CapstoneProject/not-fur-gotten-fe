@@ -15,7 +15,8 @@ const GET_PETS = gql`
 
 const Home = () => {
 
-  const { error, loading, data } = useQuery(GET_PETS)
+  const { error, loading, data } = useQuery(GET_SINGLE_PET)
+  console.log('data in home', data)
 
   return (
     <div>
