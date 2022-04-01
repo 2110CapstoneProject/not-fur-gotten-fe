@@ -1,9 +1,10 @@
 import React from 'react';
-import '../Styles/PetContainer.scss';
 import PetCard from './PetCard';
+import '../Styles/PetContainer.scss';
 
 
-const PetContainer = () => {
+const PetContainer = ({pets}) => {
+  console.log(pets)
   return (
     <div>
       <h2>Pets Available For Adoption</h2>
