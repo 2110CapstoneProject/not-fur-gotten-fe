@@ -1,55 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Styles/Pet.scss';
+import { useQuery, gql } from '@apollo/client';
 import Header from './Header';
+import { useParams } from 'react-router-dom';
+import OwnerInformation from './OwnerInformation';
+import PetInformation from './PetInformation';
 
+
+const GET_SINGLE_PET = gql`
+query getPetById($id: ID!) {
+  getPetById(id: $id) 
+  {
+    id
+    name
+    age
+    gender
+    description
+    species
+    ownerStory
+    ownerEmail
+    ownerName
+    applications {
+      name
+      email
+      description
+    }
+  }
+}
+`
 
 const Pet = () => {
+  const [showOwnerInfo, setOwnerInfo] = useState(false);
+  
+  let { id } = useParams();
+  const { loading, error, data } = useQuery(GET_SINGLE_PET, {variables: {id}})
+
+  if (loading) {
+    return <p>Loading...</p>
+  }
+  if (error) {
+    return <p>{error}</p>
+  }
+
+
+  let currentView;
+  if (showOwnerInfo) {
+    currentView = (
+      <OwnerInformation 
+        ownerName={data.getPetById.ownerName}
+        ownerStory={data.getPetById.ownerStory}
+        setOwnerInfo={setOwnerInfo}
+        petName={data.getPetById.name}
+      />)
+  } else {
+    currentView = (
+      <PetInformation 
+        id ={data.getPetById.id} 
+        name={data.getPetById.name} 
+        age={data.getPetById.age}
+        gender={data.getPetById.gender}
+        species={data.getPetById.species}
+        description={data.getPetById.description}
+        applications={data.getPetById.applications}
+        setOwnerInfo={setOwnerInfo}
+      />)
+  }
+
   return (
     <div className='pet-page-holder'>
       <Header />
       <div className='pet-card-container'>
-        <section className="single-pet-details-container">
-          <div className='about-owner-nav'>
-            <h2>Read More About the Owner >></h2>
-          </div>
-          <div className='middle-o-card-container'>
-            <div className='pet-details'>
-              <div className='light-pet-details'>
-                <h2 className='single-pet-name'>Stewart</h2>
-                <p className='single-pet-age'>9 years old</p>
-                <p className='single-pet-gender'>Female</p>
-                <p className='single-pet-type'>French Bull Dog</p>
-              </div>
-              <div className='single-pet-description'>
-                <p>Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                Hi, I'm Stewy! I'm so happy to see you! I really like warm sweaters and belly rubs!
-                </p>
-              </div>
-            </div>
-            <div className='pet-image'>
-              <img src="https://static.inspiremore.com/wp-content/uploads/2019/05/30133841/adorable-senior-dogs-7.jpg"/>
-            </div>
-          </div>
-          <div className='button-container'>
-            <button className='view-app-button'>View Applications</button>
-            <button className='submit-app-button'>Submit Application</button>
-          </div>
-        </section>
+        {currentView}
       </div>
     </div>
   )
