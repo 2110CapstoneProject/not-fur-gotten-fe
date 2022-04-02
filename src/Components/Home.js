@@ -14,21 +14,25 @@ const GET_PETS = gql`
 `
 
 const Home = () => {
+  const { loading, error, data } = useQuery(GET_PETS)
 
-  const { error, loading, data } = useQuery(GET_PETS)
-  console.log('data in home', data)
+  if (loading) {
+    return <p>Loading...</p>
+  }
+  if (error) {
+    return <p>{error}</p>
+  }
 
   return (
-    <div>
-      <section className='upperSection'>
-        <Header />
-        <h1>Find a forever home for your best friend</h1>
+    <div className="page-view">
+      <Header />
+      <section className='hero-banner'>
+        <h2 className="hero-banner-text">Find a forever home for your best friend.</h2>
+        <button className="donate-button">Rehome Your Pet</button>
       </section>
-      <PetContainer pets={data}/>
+      <PetContainer pets={data.getAllPets}/>
     </div>
   )
 }
 
 export default Home;
-
-
