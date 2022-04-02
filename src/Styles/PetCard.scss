@@ -1,6 +1,21 @@
 @import "_variables.scss";
 
 .pet-card {
-  border: 2px solid black;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.pet-image {
+  height: 320px;
+  width: 230px;
+  border: none;
+}
+
+.pet-card-name {
+  font-size: x-large;
+  text-align: center;
 }

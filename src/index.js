@@ -6,16 +6,28 @@ import App from './Components/App';
 import {
   ApolloProvider,
   ApolloClient,
-  createHttpLink,
+  ApolloLink,
+  concat,
+  HttpLink,
   InMemoryCache
 } from '@apollo/client';
 
-const httpLink = createHttpLink({
+const httpLink = new HttpLink({
   uri: 'https://not-fur-gotten-be.herokuapp.com/graphql'
 });
 
+const operationNameLink = new ApolloLink((operation, forward) => {
+  operation.setContext(({ headers }) => ({
+    headers: {
+      'x-gql-operation-name': operation.operationName,
+      ...headers
+    }
+  }))
+  return forward(operation);
+})
+
 const client = new ApolloClient({
-  link: httpLink,
+  link: concat(operationNameLink, httpLink),
   cache: new InMemoryCache()
 });
 

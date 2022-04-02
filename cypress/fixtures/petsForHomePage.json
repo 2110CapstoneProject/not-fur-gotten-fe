@@ -1,0 +1,26 @@
+{
+  "data": {
+    "getAllPets": [
+      {
+          "id": "1",
+          "name": "Ethan"
+      },
+      {
+          "id": "2",
+          "name": "Stevie"
+      },
+      {
+          "id": "3",
+          "name": "Lexy"
+      },
+      {
+          "id": "4",
+          "name": "Christine"
+      },
+      {
+          "id": "5",
+          "name": "Tuna"
+      }
+    ]
+  }
+}

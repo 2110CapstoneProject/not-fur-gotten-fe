@@ -3,16 +3,21 @@ import PetCard from './PetCard';
 import '../Styles/PetContainer.scss';
 
 
-const PetContainer = ({pets}) => {
-  console.log(pets)
+const PetContainer = ({ pets }) => {
+  const petCards = pets.map(pet => {
+    return (
+      <PetCard
+        id={pet.id}
+        name={pet.name}
+      />
+    )
+  });
+
   return (
-    <div>
-      <h2>Pets Available For Adoption</h2>
-      <section className='pet-container'>
-        <PetCard />
-        <PetCard />
-        <PetCard />
-        <PetCard />
+    <div className="pet-container-section">
+      <h2 className="home-page-subheader">Pets Available For Adoption</h2>
+      <section className="pet-container">
+        {petCards}
       </section>
     </div>
   )

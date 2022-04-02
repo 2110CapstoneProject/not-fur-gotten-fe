@@ -1,8 +1,23 @@
 @import "_variables.scss";
 
+.pet-container-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.home-page-subheader {
+  font-size: xx-large;
+  align-self: flex-start;
+  vertical-align: center;
+  height: 50px;
+  margin-top: 30px;
+}
+
 .pet-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  
+  grid-gap: 20px;
+  align-content: center;
 }
