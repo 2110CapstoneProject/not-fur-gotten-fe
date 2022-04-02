@@ -1,31 +1,6 @@
 import { aliasQuery, hasOperationName } from '../utils/graphql-test-utils';
 
 describe('Not Fur-gotten Home Page User Flow', () => {
-  // beforeEach(() => {
-  //   cy.intercept('POST', 'https://not-fur-gotten-be.herokuapp.com/graphql', (req) => {
-  //     const { body } = req
-  //     if (hasOperationName(req, 'getAllPets')) {
-  //       req.alias = 'gqlgetAllPetsQuery';
-  //       req.reply((res) => {
-  //         res.body.data.getAllPets = [
-  //           {
-  //             id: 1,
-  //             name: "Bongo"
-  //           },
-  //           {
-  //             id: 2,
-  //             name: "Karl"
-  //           },
-  //           {
-  //             id: 3,
-  //             name: "Sparky"
-  //           }
-  //         ];
-  //       });
-  //     }
-  //   });
-  // });
-
   beforeEach(() => {
     cy.intercept(
       {
