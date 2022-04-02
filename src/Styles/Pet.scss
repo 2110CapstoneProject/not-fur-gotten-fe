@@ -49,12 +49,15 @@
 
 .single-pet-gender,
 .single-pet-type,
-.single-pet-age {
+.single-pet-age,
+.description-label {
   font-size: larger;
+  line-height: 1.5;
 }
 
 .single-pet-description {
   overflow: auto;
+  line-height: 1.5;
 }
 
 .pet-details {
@@ -62,16 +65,16 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: start;
-  gap: 1em;
   max-width: 45%;
   height: 112.5%;
 }
 
 img {
-  height: 330px;
-  width: 270px;
+  max-height: 100%;
+  max-width: 100%;
   border: 2px solid black;
   border-radius: 3px;
+  margin-right: 1em;
 }
 
 .button-container {
