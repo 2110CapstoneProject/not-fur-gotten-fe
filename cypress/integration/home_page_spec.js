@@ -1,5 +1,3 @@
-import { aliasQuery, hasOperationName } from '../utils/graphql-test-utils';
-
 describe('Not Fur-gotten Home Page User Flow', () => {
   beforeEach(() => {
     cy.intercept(
