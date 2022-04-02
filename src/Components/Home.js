@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import '../Styles/Home.scss';
 
 const GET_PETS = gql`
-  {
+  query getAllPets {
     getAllPets {
       id
       name
@@ -16,6 +16,8 @@ const GET_PETS = gql`
 
 const Home = () => {
   const { loading, error, data } = useQuery(GET_PETS)
+  console.log(useQuery(GET_PETS));
+
   if (loading) {
     return <p>Loading...</p>
   }
@@ -29,7 +31,7 @@ const Home = () => {
       <section className='hero-banner'>
         <h2 className="hero-banner-text">Find a forever home for your best friend.</h2>
         <Link to="/donation">
-          <button className="donate-button">Rehome Your Pet</button>
+          <button className="rehome-button">Rehome Your Pet</button>
         </Link>
       </section>
       <PetContainer pets={data.getAllPets}/>
