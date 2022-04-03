@@ -10,7 +10,9 @@ const PetInformation = ({
   species, 
   description, 
   age,
-  setOwnerInfo
+  image,
+  setOwnerInfo,
+  refetch
 }) => {
 
   const [show, setShow] = useState(false)
@@ -34,7 +36,7 @@ const PetInformation = ({
           </div>
         </div>
         <div className='pet-image'>
-          <img src="https://static.inspiremore.com/wp-content/uploads/2019/05/30133841/adorable-senior-dogs-7.jpg"/>
+          <img src={image}/>
         </div>
       </div>
       <div className='button-container'>
@@ -50,6 +52,7 @@ const PetInformation = ({
           petName={name}
           show={show}
           onClose={() => setShow(false)}
+          refetch={refetch}
         />
       </div>
     </section>
