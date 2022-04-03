@@ -1,6 +1,7 @@
-import React from 'react';
-import '../Styles/PetInformation.scss';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ApplicationFormModal from './ApplicationFormModal';
+import '../Styles/PetInformation.scss';
 
 const PetInformation = ({
   id, 
@@ -11,6 +12,8 @@ const PetInformation = ({
   age,
   setOwnerInfo
 }) => {
+
+  const [show, setShow] = useState(false)
 
   return (
     <section className="single-pet-details-container">
@@ -38,7 +41,16 @@ const PetInformation = ({
         <Link to={`/pet/${id}/applications`}>
           <button className='view-app-button'>View Applications</button>
         </Link>
-        <button className='submit-app-button'>Submit Application</button>
+        <button 
+          onClick={() => setShow(true)} 
+          className='submit-app-button'>Application to Adopt
+        </button>
+        <ApplicationFormModal 
+          petId={id}
+          petName={name}
+          show={show}
+          onClose={() => setShow(false)}
+        />
       </div>
     </section>
   )
