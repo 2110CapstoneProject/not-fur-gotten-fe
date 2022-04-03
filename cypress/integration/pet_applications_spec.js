@@ -29,7 +29,6 @@ describe('Pet Applications Component', () => {
   
   });
 
-
   it('Should display the nav bar, title, and applications for a pet', () => {
     cy.visit('http://localhost:3000/pet/1/applications')
     cy.wait('@singlePetApplications')
