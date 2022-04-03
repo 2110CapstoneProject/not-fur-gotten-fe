@@ -20,6 +20,7 @@ query getPetById($id: ID!) {
     ownerStory
     ownerEmail
     ownerName
+    image
     applications {
       name
       email
@@ -60,6 +61,7 @@ const Pet = () => {
         gender={data.getPetById.gender}
         species={data.getPetById.species}
         description={data.getPetById.description}
+        image={data.getPetById.image}
         applications={data.getPetById.applications}
         setOwnerInfo={setOwnerInfo}
         refetch={refetch}
