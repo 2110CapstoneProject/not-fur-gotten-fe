@@ -1,0 +1,22 @@
+{
+    "data": {
+        "getPetById": {
+            "id": "1",
+            "name": "Clifford",
+            "age": 2,
+            "gender": "Male",
+            "description": "Big Red Dog, likes kids",
+            "species": "dog",
+            "ownerStory": "My owner is going into assisted living next month and he is worried about what will happen to me",
+            "ownerEmail": "old_dude@gmail.com",
+            "ownerName": "Joe",
+            "applications": [
+                {
+                    "name": "Joe",
+                    "email": "joe@yahoo.com",
+                    "description": "I have a large yard and like to go for hikes"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@import '_variables.scss';
+
+.single-pet-details-container-owner {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 80%;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 6px black;
+  border-radius: 50px;
+  gap: 30px;
+}
+
+.owner-page-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 20px;
+  height: 75%;
+}
+
+.owner-story {
+  margin-top: 15px;
+  font-size: larger;
+  line-height: 1.5;
+  height: 100%;
+  width: 90%;
+  overflow: auto;
+}
