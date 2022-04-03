@@ -1,17 +1,63 @@
 import React, {useState} from 'react';
+import { gql, useMutation  } from '@apollo/client';
 import '../Styles/ApplicationFormModal.scss';
 
-const ApplicationFormModal = () => {
+const CREATE_APPLICATION = gql`
+    mutation CreateApplication(
+        $name: String!, 
+        $email: String!, 
+        $description: String!, 
+        $petId: Int!) {
+            createApplication(input : {
+                name: $name, 
+                email: $email, 
+                description: $description, 
+                petId: $petId}) {
+                    application {
+                        id
+                        name
+                        email
+                        description
+                        petId
+                    }
+                    errors
+                }
+            }
+`
+
+
+const ApplicationFormModal = ({ show, onClose, petName, petId }) => {
     const [formState, setFormState] = useState({
         name: '',
         email: '',
         description: ''
     })
 
+    const [createApplication, { data, loading, error}] = useMutation(CREATE_APPLICATION)
+
+    console.log(data)
+    console.log('loading', loading)
+
+    if (!show) {
+        return null
+    }
+
+    const makeIdInt = parseInt(petId)
+    console.log(typeof makeIdInt)
+
+
+
     return (
-        <div className='modal'>
-            <form className='application-form' onSubmit={(e) => e.preventDefault()}>
-                <h2 className='form-title'>Application Form</h2>
+        <div className='modal' onClick={onClose}>
+            <form 
+                className='application-form' 
+                onClick={(e) => e.stopPropagation()} 
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    createApplication({ variables: { petId: makeIdInt, name: formState.name, email: formState.email, description: formState.description } })
+                }}>
+                
+                <h2 className='form-title'>Application Form for {petName}</h2>
                 <section className='applicant-info-container'>
                     <h3 className='form-subtitle'>Contact Information</h3>
                     <div className= 'applicant-form-container'>
