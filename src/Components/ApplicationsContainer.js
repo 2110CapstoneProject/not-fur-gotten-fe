@@ -13,9 +13,10 @@ const ApplicationContainer = (apps) => {
       />
     )
   })
-  return(
+  let display = allApplications.length ? allApplications : <p className='no-applications-section'>No applications quite yet.</p>
+  return (
     <section className='application-container'>
-      {allApplications}
+      {display}
     </section>
   )
 }
