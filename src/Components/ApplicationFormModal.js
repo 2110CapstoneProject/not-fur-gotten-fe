@@ -3,7 +3,7 @@ import { gql, useMutation  } from '@apollo/client';
 import '../Styles/ApplicationFormModal.scss';
 
 const CREATE_APPLICATION = gql`
-    mutation CreateApplication(
+    mutation createApplication(
         $name: String!, 
         $email: String!, 
         $description: String!, 
@@ -93,7 +93,7 @@ const ApplicationFormModal = ({ show, onClose, petName, petId, refetch }) => {
                         <div className='input-label'>
                             <label htmlFor='applicantDesription'>Tell the owner what makes you the best fit for their pet:</label>
                             <textarea 
-                                id='applicatDescription'
+                                id='applicantDescription'
                                 value={formState.description}
                                 placeholder='I am the best fit because...'
                                 rows="10"
