@@ -1,5 +1,6 @@
-import React from "react";
+import React from 'react';
 import '../Styles/PetInformation.scss';
+import { Link } from 'react-router-dom';
 
 const PetInformation = ({
   id, 
@@ -34,7 +35,9 @@ const PetInformation = ({
         </div>
       </div>
       <div className='button-container'>
-        <button className='view-app-button'>View Applications</button>
+        <Link to={`/pet/${id}/applications`}>
+          <button className='view-app-button'>View Applications</button>
+        </Link>
         <button className='submit-app-button'>Submit Application</button>
       </div>
     </section>

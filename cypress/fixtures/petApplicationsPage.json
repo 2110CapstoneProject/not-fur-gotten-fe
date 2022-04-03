@@ -1,0 +1,19 @@
+{
+  "data": {
+      "getPetById": {
+          "name": "Godzilla",
+          "applications": [
+              {
+                  "name": "Lenny",
+                  "email": "lenny@gmail.com",
+                  "description": "I love cats and live in an apartment. I don't want Larry to stress about Garfield.  I will give him a loving home."
+              },
+              {
+                  "name": "April",
+                  "email": "april@yahoo.com",
+                  "description": "I used to have a cat that looks like Garfield.  I am ready for a cat again and would love to adopt.  I have a large home where I can set up a big cat tree for Garfield so he can watch birds out the window."
+              }
+          ]
+      }
+   }
+}
