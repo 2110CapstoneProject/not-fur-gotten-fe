@@ -35,6 +35,11 @@ textarea {
   width: 99%;
 }
 
+button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 .modal {
   position: fixed;
   left: 0;
@@ -70,11 +75,6 @@ textarea {
   border-radius: 20px;
   padding: 10px;
   width: 100px;
-
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.05);
-    }
 }
 
 .about-owner-nav {
