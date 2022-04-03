@@ -25,8 +25,7 @@ const CREATE_APPLICATION = gql`
             }
 `
 
-
-const ApplicationFormModal = ({ show, onClose, petName, petId }) => {
+const ApplicationFormModal = ({ show, onClose, petName, petId, refetch }) => {
     const [formState, setFormState] = useState({
         name: '',
         email: '',
@@ -35,17 +34,11 @@ const ApplicationFormModal = ({ show, onClose, petName, petId }) => {
 
     const [createApplication, { data, loading, error}] = useMutation(CREATE_APPLICATION)
 
-    console.log(data)
-    console.log('loading', loading)
-
     if (!show) {
         return null
     }
 
     const makeIdInt = parseInt(petId)
-    console.log(typeof makeIdInt)
-
-
 
     return (
         <div className='modal' onClick={onClose}>
@@ -54,7 +47,9 @@ const ApplicationFormModal = ({ show, onClose, petName, petId }) => {
                 onClick={(e) => e.stopPropagation()} 
                 onSubmit={(e) => {
                     e.preventDefault();
-                    createApplication({ variables: { petId: makeIdInt, name: formState.name, email: formState.email, description: formState.description } })
+                    createApplication({ variables: { petId: makeIdInt, name: formState.name, email: formState.email, description: formState.description }});
+                    refetch()
+                    onClose();
                 }}>
                 
                 <h2 className='form-title'>Application Form for {petName}</h2>
