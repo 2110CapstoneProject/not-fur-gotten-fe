@@ -10,6 +10,7 @@ const GET_PETS = gql`
     getAllPets {
       id
       name
+      image
     }
   }
 `

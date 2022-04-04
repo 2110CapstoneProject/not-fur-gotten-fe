@@ -9,6 +9,7 @@ const PetContainer = ({ pets }) => {
       <PetCard
         id={pet.id}
         name={pet.name}
+        image={pet.image}
       />
     )
   });
