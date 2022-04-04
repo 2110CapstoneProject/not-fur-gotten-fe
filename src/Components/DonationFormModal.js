@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../Styles/DonationFormModal.scss';
 
 const DonationFormModal = () => {
+  const [file, setFile] = useState(null);
   const [formState, setFormState] = useState({
     ownerName: '',
     ownerEmail: '',
@@ -11,8 +12,32 @@ const DonationFormModal = () => {
     type: '',
     gender: '',
     petDescription: '',
-    imageUpload: ''
+    imageName: '',
+    imageUrl: ''
   })
+
+  const handlePic = (e) => {
+    setFormState({
+      ...formState,
+      imageName: e.target.value
+    });
+    const picture = e.target.files[0];
+    setFile(picture);
+  }
+
+  const uploadImage = () => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'b3somrig');
+    fetch('https://api.cloudinary.com/v1_1/dzfyvxcwi/upload', {
+      method: 'POST',
+      body: formData,
+    })
+      .then(response => response.json())
+      .then(response => console.log(response))
+  }
+
+
   return (
     <div className="modal">
       <form className="donation-form" onSubmit={(e) => e.preventDefault()}>
@@ -164,16 +189,13 @@ const DonationFormModal = () => {
             <input
               data-testid="image-upload"
               type="file"
-              value={formState.imageUpload}
+              accept="image/png, image/jpeg"
+              value={formState.imageName}
               id="imageUpload"
-              onChange={(e) =>
-                setFormState({
-                  ...formState,
-                  imageUpload: e.target.value
-                })
-              }
+              onChange={handlePic}
               required
             />
+            <button className="upload-button" type="button" onClick={uploadImage}>Upload</button>
           </div>
         </section>
         <button className="submit-button">Submit</button>
