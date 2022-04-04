@@ -16,7 +16,7 @@ const GET_PETS = gql`
 `
 
 const Home = () => {
-  const { loading, error, data } = useQuery(GET_PETS)
+  const { loading, error, data } = useQuery(GET_PETS);
 
   if (loading) {
     return <p>Loading...</p>
