@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import '../Styles/Pet.scss';
 import { useQuery, gql } from '@apollo/client';
-import Header from './Header';
 import { useParams } from 'react-router-dom';
+import Header from './Header';
 import OwnerInformation from './OwnerInformation';
 import PetInformation from './PetInformation';
+import '../Styles/Pet.scss';
 
 
 const GET_SINGLE_PET = gql`
@@ -20,6 +20,7 @@ query getPetById($id: ID!) {
     ownerStory
     ownerEmail
     ownerName
+    image
     applications {
       name
       email
@@ -33,7 +34,7 @@ const Pet = () => {
   const [showOwnerInfo, setOwnerInfo] = useState(false);
   
   let { id } = useParams();
-  const { loading, error, data } = useQuery(GET_SINGLE_PET, {variables: {id}})
+  const { loading, error, data, refetch } = useQuery(GET_SINGLE_PET, {variables: {id}})
 
   if (loading) {
     return <p>Loading...</p>
@@ -41,7 +42,6 @@ const Pet = () => {
   if (error) {
     return <p>{error}</p>
   }
-
 
   let currentView;
   if (showOwnerInfo) {
@@ -61,8 +61,10 @@ const Pet = () => {
         gender={data.getPetById.gender}
         species={data.getPetById.species}
         description={data.getPetById.description}
+        image={data.getPetById.image}
         applications={data.getPetById.applications}
         setOwnerInfo={setOwnerInfo}
+        refetch={refetch}
       />)
   }
 

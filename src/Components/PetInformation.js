@@ -1,6 +1,7 @@
-import React from 'react';
-import '../Styles/PetInformation.scss';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ApplicationFormModal from './ApplicationFormModal';
+import '../Styles/PetInformation.scss';
 
 const PetInformation = ({
   id, 
@@ -9,8 +10,12 @@ const PetInformation = ({
   species, 
   description, 
   age,
-  setOwnerInfo
+  image,
+  setOwnerInfo,
+  refetch
 }) => {
+
+  const [show, setShow] = useState(false)
 
   return (
     <section className="single-pet-details-container">
@@ -31,14 +36,24 @@ const PetInformation = ({
           </div>
         </div>
         <div className='pet-image'>
-          <img src="https://static.inspiremore.com/wp-content/uploads/2019/05/30133841/adorable-senior-dogs-7.jpg"/>
+          <img src={image}/>
         </div>
       </div>
       <div className='button-container'>
         <Link to={`/pet/${id}/applications`}>
           <button className='view-app-button'>View Applications</button>
         </Link>
-        <button className='submit-app-button'>Submit Application</button>
+        <button 
+          onClick={() => setShow(true)} 
+          className='submit-app-button'>Application to Adopt
+        </button>
+        <ApplicationFormModal 
+          petId={id}
+          petName={name}
+          show={show}
+          onClose={() => setShow(false)}
+          refetch={refetch}
+        />
       </div>
     </section>
   )

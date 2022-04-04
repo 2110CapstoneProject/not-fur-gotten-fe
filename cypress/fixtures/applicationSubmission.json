@@ -1,0 +1,14 @@
+{
+  "data": {
+    "createApplication": {
+      "application": {
+        "id": "21",
+        "name": "Loki",
+        "email": "loki66@gmail.com",
+        "description": "I am a super cool guy and my brother is the best. We would take great care of Clifford.",
+        "petId": 2
+      },
+      "errors": []
+    }
+  }
+}

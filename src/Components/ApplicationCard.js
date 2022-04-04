@@ -4,7 +4,7 @@ import '../Styles/ApplicationCard.scss';
 const ApplicationCard = ({name, email, description}) => {
   return (
     <section className='application-card'>
-      <div className='applicant-name'>
+      <div className='applicant-personal-info'>
         <h3>{name}</h3>
         <p className='email'>{email}</p>
       </div>
