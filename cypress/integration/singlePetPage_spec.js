@@ -1,5 +1,3 @@
-import { getDefaultNormalizer } from "@testing-library/react";
-
 describe('Pet Applications Component', () => {
   beforeEach(() => {
     cy.intercept(
