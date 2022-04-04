@@ -26,7 +26,7 @@ describe('Pet Applications Component', () => {
         fixture: 'petApplicationsPage.json'
       },
     ).as('singlePetApplications');
-  
+
   });
 
   it('Should display the nav bar, title, and applications for a pet', () => {
@@ -48,13 +48,5 @@ describe('Pet Applications Component', () => {
       .contains('Applicant Introduction:')
       .get('p')
       .contains('I love cats')
-  })
-
-  it('Should throw message if there are no pet applications for a specific pet', () => {
-    cy.visit('http://localhost:3000/pet/1/applications')
-    cy.reload()
-    cy.wait('@zeroPetApplications')
-    .get('p')
-    .contains('No applications quite yet.')
   })
 })
