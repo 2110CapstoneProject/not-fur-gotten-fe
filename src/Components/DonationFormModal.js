@@ -1,7 +1,45 @@
 import React, { useState } from 'react';
+import { gql, useMutation  } from '@apollo/client';
 import '../Styles/DonationFormModal.scss';
 
-const DonationFormModal = () => {
+const CREATE_PET = gql`
+  mutation createPet(
+    $name: String!,
+    $age: Int!,
+    $gender: String!,
+    $description: String!,
+    $species: String!,
+    $ownerStory: String!,
+    $ownerEmail: String!,
+    $ownerName: String!
+    $image: String!) {
+      createPet(input : {
+        name: $name,
+        age: $age,
+        gender: $gender,
+        description: $description,
+        species: $species,
+        ownerStory: $ownerStory,
+        ownerEmail: $ownerEmail,
+        ownerName: $ownerName,
+        image: $image}) {
+          pet {
+            id,
+            name,
+            gender,
+            description,
+            species,
+            ownerStory,
+            ownerEmail,
+            ownerName,
+            image
+          }
+          errors
+        }
+    }
+`
+
+const DonationFormModal = ({ show, onClose, refetch }) => {
   const [file, setFile] = useState(null);
   const [formState, setFormState] = useState({
     ownerName: '',
@@ -15,6 +53,11 @@ const DonationFormModal = () => {
     imageName: '',
     imageUrl: ''
   })
+  const [createPet] = useMutation(CREATE_PET);
+
+  if (!show) {
+      return null
+  }
 
   const handlePic = (e) => {
     setFormState({
@@ -34,13 +77,55 @@ const DonationFormModal = () => {
       body: formData,
     })
       .then(response => response.json())
-      .then(response => console.log(response))
+      .then(response => {
+        console.log(response);
+        setFormState({
+          ...formState,
+          imageUrl: response.secure_url
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  const clearInputs = () => {
+    setFormState({
+      ownerName: '',
+      ownerEmail: '',
+      ownerStory: '',
+      petName: '',
+      age: '',
+      type: '',
+      gender: '',
+      petDescription: '',
+      imageName: '',
+      imageUrl: ''
+    });
   }
 
 
   return (
-    <div className="modal">
-      <form className="donation-form" onSubmit={(e) => e.preventDefault()}>
+    <div className="modal" onClick={onClose}>
+      <form
+        className="donation-form"
+        onClick={(e) => e.stopPropagation()}
+        onSubmit={(e) => {
+            e.preventDefault();
+            createPet({ variables: {
+              name: formState.petName,
+              age: parseInt(formState.age),
+              gender: formState.gender,
+              description: formState.petDescription,
+              species: formState.type,
+              ownerStory: formState.ownerStory,
+              ownerEmail: formState.ownerEmail,
+              ownerName: formState.ownerName,
+              image: formState.imageUrl
+            }});
+            refetch();
+            clearInputs();
+            onClose();
+        }}
+      >
         <h2 className="form-title">Donation Form</h2>
         <section className="owner-info-container">
           <h3 className="form-subtitle">Owner Information</h3>
