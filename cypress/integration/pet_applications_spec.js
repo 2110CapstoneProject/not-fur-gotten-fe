@@ -31,10 +31,7 @@ describe('Pet Applications Component', () => {
   it('Should display the nav bar, title, and applications for a pet', () => {
     cy.visit('http://localhost:3000/pet/1/applications')
     cy.wait('@singlePetApplications')
-      .get('h1')
-      .contains('Not Fur-gotten')
-      .get('p')
-      .contains('Back to Home Page')
+      .get('header')
       .get('.application-title')
       .contains('Applications for Godzilla')
       .get('.application-container')
