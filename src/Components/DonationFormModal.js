@@ -167,7 +167,7 @@ const DonationFormModal = ({ show, onClose, refetch }) => {
             </div>
           </div>
           <div className="input-label">
-            <label htmlFor="ownerStory">Owner Story *Optional*</label>
+            <label htmlFor="ownerStory">Owner Story</label>
             <textarea
               id="ownerStory"
               value={formState.ownerStory}
@@ -180,6 +180,7 @@ const DonationFormModal = ({ show, onClose, refetch }) => {
                   ownerStory: e.target.value
                 })
               }
+              required
             />
           </div>
         </section>
