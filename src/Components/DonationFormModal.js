@@ -1,7 +1,46 @@
 import React, { useState } from 'react';
+import { gql, useMutation  } from '@apollo/client';
 import '../Styles/DonationFormModal.scss';
 
-const DonationFormModal = () => {
+const CREATE_PET = gql`
+  mutation createPet(
+    $name: String!,
+    $age: Int!,
+    $gender: String!,
+    $description: String!,
+    $species: String!,
+    $ownerStory: String!,
+    $ownerEmail: String!,
+    $ownerName: String!
+    $image: String!) {
+      createPet(input : {
+        name: $name,
+        age: $age,
+        gender: $gender,
+        description: $description,
+        species: $species,
+        ownerStory: $ownerStory,
+        ownerEmail: $ownerEmail,
+        ownerName: $ownerName,
+        image: $image}) {
+          pet {
+            id,
+            name,
+            gender,
+            description,
+            species,
+            ownerStory,
+            ownerEmail,
+            ownerName,
+            image
+          }
+          errors
+        }
+    }
+`
+
+const DonationFormModal = ({ show, onClose, refetch }) => {
+  const [file, setFile] = useState(null);
   const [formState, setFormState] = useState({
     ownerName: '',
     ownerEmail: '',
@@ -11,11 +50,85 @@ const DonationFormModal = () => {
     type: '',
     gender: '',
     petDescription: '',
-    imageUpload: ''
+    imageName: '',
+    imageUrl: ''
   })
+  const [createPet] = useMutation(CREATE_PET, {
+    refetchQueries: [
+      'getAllPets'
+    ]
+  });
+
+  if (!show) {
+      return null
+  }
+
+  const handlePic = (e) => {
+    setFormState({
+      ...formState,
+      imageName: e.target.value
+    });
+    const picture = e.target.files[0];
+    setFile(picture);
+  }
+
+  const uploadImage = () => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'b3somrig');
+    fetch('https://api.cloudinary.com/v1_1/dzfyvxcwi/upload', {
+      method: 'POST',
+      body: formData,
+    })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+        setFormState({
+          ...formState,
+          imageUrl: response.secure_url
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  const clearInputs = () => {
+    setFormState({
+      ownerName: '',
+      ownerEmail: '',
+      ownerStory: '',
+      petName: '',
+      age: '',
+      type: '',
+      gender: '',
+      petDescription: '',
+      imageName: '',
+      imageUrl: ''
+    });
+  }
+
+
   return (
-    <div className="modal">
-      <form className="donation-form" onSubmit={(e) => e.preventDefault()}>
+    <div className="modal" onClick={onClose}>
+      <form
+        className="donation-form"
+        onClick={(e) => e.stopPropagation()}
+        onSubmit={(e) => {
+            e.preventDefault();
+            createPet({ variables: {
+              name: formState.petName,
+              age: parseInt(formState.age),
+              gender: formState.gender,
+              description: formState.petDescription,
+              species: formState.type,
+              ownerStory: formState.ownerStory,
+              ownerEmail: formState.ownerEmail,
+              ownerName: formState.ownerName,
+              image: formState.imageUrl
+            }});
+            clearInputs();
+            onClose();
+        }}
+      >
         <h2 className="form-title">Donation Form</h2>
         <section className="owner-info-container">
           <h3 className="form-subtitle">Owner Information</h3>
@@ -54,7 +167,7 @@ const DonationFormModal = () => {
             </div>
           </div>
           <div className="input-label">
-            <label htmlFor="ownerStory">Owner Story *Optional*</label>
+            <label htmlFor="ownerStory">Owner Story</label>
             <textarea
               id="ownerStory"
               value={formState.ownerStory}
@@ -67,6 +180,7 @@ const DonationFormModal = () => {
                   ownerStory: e.target.value
                 })
               }
+              required
             />
           </div>
         </section>
@@ -164,16 +278,13 @@ const DonationFormModal = () => {
             <input
               data-testid="image-upload"
               type="file"
-              value={formState.imageUpload}
+              accept="image/png, image/jpeg"
+              value={formState.imageName}
               id="imageUpload"
-              onChange={(e) =>
-                setFormState({
-                  ...formState,
-                  imageUpload: e.target.value
-                })
-              }
+              onChange={handlePic}
               required
             />
+            <button className="upload-button" type="button" onClick={uploadImage}>Upload</button>
           </div>
         </section>
         <button className="submit-button">Submit</button>

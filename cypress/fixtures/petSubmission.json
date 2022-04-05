@@ -1,0 +1,18 @@
+{
+  "data": {
+    "createPet": {
+      "pet": {
+        "id": "6",
+        "name": "Jack",
+        "gender": "Male",
+        "description": "He's a little trickster. Keep an eye on your treasures, he has sticky fingers!",
+        "species": "Monkey",
+        "ownerStory": "I am a seafairing pirate, and need a new home for my undead monkey.",
+        "ownerEmail": "captainsparrow@blackpearl.net",
+        "ownerName": "Jack Sparrow",
+        "image": "https://images.unsplash.com/photo-1591946614720-90a587da4a36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
+      },
+      "errors": []
+    }
+  }
+}
