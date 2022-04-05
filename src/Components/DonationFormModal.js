@@ -53,7 +53,11 @@ const DonationFormModal = ({ show, onClose, refetch }) => {
     imageName: '',
     imageUrl: ''
   })
-  const [createPet] = useMutation(CREATE_PET);
+  const [createPet] = useMutation(CREATE_PET, {
+    refetchQueries: [
+      'getAllPets'
+    ]
+  });
 
   if (!show) {
       return null
@@ -121,7 +125,6 @@ const DonationFormModal = ({ show, onClose, refetch }) => {
               ownerName: formState.ownerName,
               image: formState.imageUrl
             }});
-            refetch();
             clearInputs();
             onClose();
         }}

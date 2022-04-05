@@ -9,7 +9,7 @@ import '../Styles/Pet.scss';
 
 const GET_SINGLE_PET = gql`
 query getPetById($id: ID!) {
-  getPetById(id: $id) 
+  getPetById(id: $id)
   {
     id
     name
@@ -32,9 +32,9 @@ query getPetById($id: ID!) {
 
 const Pet = () => {
   const [showOwnerInfo, setOwnerInfo] = useState(false);
-  
+
   let { id } = useParams();
-  const { loading, error, data, refetch } = useQuery(GET_SINGLE_PET, {variables: {id}})
+  const { loading, error, data } = useQuery(GET_SINGLE_PET, {variables: {id}})
 
   if (loading) {
     return <p>Loading...</p>
@@ -46,7 +46,7 @@ const Pet = () => {
   let currentView;
   if (showOwnerInfo) {
     currentView = (
-      <OwnerInformation 
+      <OwnerInformation
         ownerName={data.getPetById.ownerName}
         ownerStory={data.getPetById.ownerStory}
         setOwnerInfo={setOwnerInfo}
@@ -54,9 +54,9 @@ const Pet = () => {
       />)
   } else {
     currentView = (
-      <PetInformation 
-        id ={data.getPetById.id} 
-        name={data.getPetById.name} 
+      <PetInformation
+        id ={data.getPetById.id}
+        name={data.getPetById.name}
         age={data.getPetById.age}
         gender={data.getPetById.gender}
         species={data.getPetById.species}
@@ -64,7 +64,6 @@ const Pet = () => {
         image={data.getPetById.image}
         applications={data.getPetById.applications}
         setOwnerInfo={setOwnerInfo}
-        refetch={refetch}
       />)
   }
 

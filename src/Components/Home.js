@@ -17,7 +17,7 @@ const GET_PETS = gql`
 
 const Home = () => {
   const [show, setShow] = useState(false)
-  const { loading, error, data, refetch } = useQuery(GET_PETS);
+  const { loading, error, data } = useQuery(GET_PETS);
 
   if (loading) {
     return <p>Loading...</p>
@@ -37,7 +37,6 @@ const Home = () => {
       <DonationFormModal
         show={show}
         onClose={() => setShow(false)}
-        refetch={refetch}
       />
     </div>
   )

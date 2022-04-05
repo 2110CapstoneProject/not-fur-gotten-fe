@@ -25,14 +25,18 @@ const CREATE_APPLICATION = gql`
             }
 `
 
-const ApplicationFormModal = ({ show, onClose, petName, petId, refetch }) => {
+const ApplicationFormModal = ({ show, onClose, petName, petId }) => {
     const [formState, setFormState] = useState({
         name: '',
         email: '',
         description: ''
     })
 
-    const [createApplication] = useMutation(CREATE_APPLICATION)
+    const [createApplication] = useMutation(CREATE_APPLICATION, {
+      refetchQueries: [
+        'getPetById'
+      ]
+    });
 
     if (!show) {
         return null
@@ -63,7 +67,6 @@ const ApplicationFormModal = ({ show, onClose, petName, petId, refetch }) => {
                 onSubmit={(e) => {
                     e.preventDefault();
                     createApplication({ variables: { petId: makeIdInt, name: formState.name, email: formState.email, description: formState.description }});
-                    refetch();
                     clearInputs();
                     onClose();
                 }}
