@@ -31,10 +31,7 @@ describe('Not Fur-gotten Home Page User Flow', () => {
   it('should display all elements on the Home page', () => {
     cy.visit('http://localhost:3000/')
     cy.wait('@getAllPets')
-      .get('h1')
-      .contains('Not Fur-gotten')
-      .get('p')
-      .contains('Back to Home Page')
+      .get('header')
       .get('.hero-banner-text')
       .contains('Find a forever home for your best friend.')
       .get('.rehome-button')
