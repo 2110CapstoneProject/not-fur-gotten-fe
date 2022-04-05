@@ -1,10 +1,11 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import '../Styles/App.scss';
 import Home from './Home';
 import Pet from './Pet';
 import PetApplications from './PetApplications';
 import Error from './Error';
+import '../Styles/App.scss';
+
 
 function App() {
 
