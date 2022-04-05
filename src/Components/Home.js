@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { useQuery, gql } from '@apollo/client';
 import PetContainer from './PetContainer';
 import Header from './Header';
 import DonationFormModal from './DonationFormModal';
-import { useQuery, gql } from '@apollo/client';
 import '../Styles/Home.scss';
 
 const GET_PETS = gql`
@@ -18,6 +18,7 @@ const GET_PETS = gql`
 const Home = () => {
   const [show, setShow] = useState(false)
   const { loading, error, data } = useQuery(GET_PETS);
+  
 
   if (loading) {
     return <p>Loading...</p>
