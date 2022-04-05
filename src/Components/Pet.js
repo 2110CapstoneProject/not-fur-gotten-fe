@@ -69,7 +69,7 @@ const Pet = () => {
 
   return (
     <div className='pet-page-holder'>
-      <Header />
+      <Header id={id} />
       <div className='pet-card-container'>
         {currentView}
       </div>

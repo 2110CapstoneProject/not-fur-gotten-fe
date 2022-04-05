@@ -1,4 +1,4 @@
-describe('Pet Applications Component', () => {
+describe('Single Pet Page', () => {
   beforeEach(() => {
     cy.intercept(
       {
@@ -33,10 +33,7 @@ describe('Pet Applications Component', () => {
   });
 
   it('Should display the nav bar, title, and information about a pet', () => {
-    cy.get('h1')
-      .contains('Not Fur-gotten')
-      .get('p')
-      .contains('Back to Home Page')
+    cy.get('header')
       .get('.about-owner-nav')
       .contains('Read More About the Owner »')
       .get('.single-pet-owner-name')

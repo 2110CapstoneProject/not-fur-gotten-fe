@@ -34,7 +34,7 @@ const PetApplications = () => {
 
   return (
     <section>
-      <Header />
+      <Header id={id} petName={data.getPetById.name}/>
       <h2 className='application-title'>Applications for {data.getPetById.name}</h2>
       <ApplicationContainer apps={data.getPetById} />
     </section>

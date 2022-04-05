@@ -3,6 +3,8 @@ import Header from './Header';
 import '../Styles/Error.scss';
 
 const Error = () => {
+
+
   return (
     <section>
       <Header />
