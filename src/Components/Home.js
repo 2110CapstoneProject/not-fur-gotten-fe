@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PetContainer from './PetContainer';
 import Header from './Header';
+import DonationFormModal from './DonationFormModal';
 import { useQuery, gql } from '@apollo/client';
-import { Link } from 'react-router-dom';
 import '../Styles/Home.scss';
 
 const GET_PETS = gql`
@@ -16,7 +16,8 @@ const GET_PETS = gql`
 `
 
 const Home = () => {
-  const { loading, error, data } = useQuery(GET_PETS);
+  const [show, setShow] = useState(false)
+  const { loading, error, data, refetch } = useQuery(GET_PETS);
 
   if (loading) {
     return <p>Loading...</p>
@@ -30,11 +31,14 @@ const Home = () => {
       <Header />
       <section className='hero-banner'>
         <h2 className="hero-banner-text">Find a forever home for your best friend.</h2>
-        <Link to="/donation">
-          <button className="rehome-button">Rehome Your Pet</button>
-        </Link>
+        <button onClick={() => setShow(true)} className="rehome-button">Rehome Your Pet</button>
       </section>
       <PetContainer pets={data.getAllPets}/>
+      <DonationFormModal
+        show={show}
+        onClose={() => setShow(false)}
+        refetch={refetch}
+      />
     </div>
   )
 }
