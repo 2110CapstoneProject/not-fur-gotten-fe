@@ -26,7 +26,6 @@ describe('Pet Applications Component', () => {
         fixture: 'petApplicationsPage.json'
       },
     ).as('singlePetApplications');
-
   });
 
   it('Should display the nav bar, title, and applications for a pet', () => {
