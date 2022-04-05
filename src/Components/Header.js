@@ -13,9 +13,9 @@ const Header = ({id, petName}) => {
   };
 
   if (pathname === `/pet/${id}`) {
-    navLink = <Link style={linkStyle} to='/'>Back to Home »</Link>
+    navLink = <Link className="nav-link" style={linkStyle} to='/'>Back to Home »</Link>
   } else if (pathname === `/pet/${id}/applications`){
-    navLink = <Link style={linkStyle} to={`/pet/${id}`}>Back to {petName} »</Link>
+    navLink = <Link className="nav-link" style={linkStyle} to={`/pet/${id}`}>Back to {petName} »</Link>
   } else {
     navLink = null;
   }
