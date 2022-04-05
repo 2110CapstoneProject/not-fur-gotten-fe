@@ -2,23 +2,29 @@ import React from "react";
 import { Link, useLocation } from 'react-router-dom';
 import '../Styles/Header.scss';
 
-const Header = () => {
-  let location = useLocation();
-  let goBackLink;
-  console.log(location)
+const Header = ({id, petName}) => {
+  let { pathname } = useLocation();
+  let navLink;
+  
+  const linkStyle = {
+    textDecoration: 'none',
+    color: 'white',
+  };
 
-  // if (!location) {
-  //   goBackLink = null
-  // } else {
-  //   goBackLink = <Link><p>Back to Home Page</p></Link>
-  // }
-
+  if (pathname === `/pet/${id}`) {
+    navLink = <Link style={linkStyle} to='/'>Back to Home »</Link>
+  } else if (pathname === `/pet/${id}/applications`){
+    navLink = <Link style={linkStyle} to={`/pet/${id}`}>Back to {petName} »</Link>
+  } else {
+    navLink = null;
+  }
+ 
   return (
     <header className="header">
-      <Link to="/">
+      <Link to="/" style={linkStyle}>
         <h1>Not Fur-gotten</h1>
       </Link>
-      <p>Back to Home Page</p>
+      {navLink}
     </header>
   )
 }
