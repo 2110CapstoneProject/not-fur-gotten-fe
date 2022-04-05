@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../Not_Furgotten_logo.png';
 import '../Styles/Header.scss';
 
 const Header = ({id, petName}) => {
@@ -22,7 +23,7 @@ const Header = ({id, petName}) => {
   return (
     <header className="header">
       <Link to="/" style={linkStyle}>
-        <h1>Not Fur-gotten</h1>
+        <img src={logo} alt="Not Furgotten Logo" className="logo" />
       </Link>
       {navLink}
     </header>
