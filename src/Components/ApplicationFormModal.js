@@ -4,14 +4,14 @@ import '../Styles/ApplicationFormModal.scss';
 
 const CREATE_APPLICATION = gql`
     mutation createApplication(
-        $name: String!, 
-        $email: String!, 
-        $description: String!, 
+        $name: String!,
+        $email: String!,
+        $description: String!,
         $petId: Int!) {
             createApplication(input : {
-                name: $name, 
-                email: $email, 
-                description: $description, 
+                name: $name,
+                email: $email,
+                description: $description,
                 petId: $petId}) {
                     application {
                         id
@@ -32,26 +32,42 @@ const ApplicationFormModal = ({ show, onClose, petName, petId, refetch }) => {
         description: ''
     })
 
-    const [createApplication, { data, loading, error}] = useMutation(CREATE_APPLICATION)
+    const [createApplication] = useMutation(CREATE_APPLICATION)
 
     if (!show) {
         return null
+    }
+
+    const clearInputs = () => {
+      setFormState({
+        ownerName: '',
+        ownerEmail: '',
+        ownerStory: '',
+        petName: '',
+        age: '',
+        type: '',
+        gender: '',
+        petDescription: '',
+        imageName: '',
+        imageUrl: ''
+      });
     }
 
     const makeIdInt = parseInt(petId)
 
     return (
         <div className='modal' onClick={onClose}>
-            <form 
-                className='application-form' 
-                onClick={(e) => e.stopPropagation()} 
+            <form
+                className='application-form'
+                onClick={(e) => e.stopPropagation()}
                 onSubmit={(e) => {
                     e.preventDefault();
                     createApplication({ variables: { petId: makeIdInt, name: formState.name, email: formState.email, description: formState.description }});
-                    refetch()
+                    refetch();
+                    clearInputs();
                     onClose();
-                }}>
-                
+                }}
+            >
                 <h2 className='form-title'>Application Form for {petName}</h2>
                 <section className='applicant-info-container'>
                     <h3 className='form-subtitle'>Contact Information</h3>
@@ -64,14 +80,14 @@ const ApplicationFormModal = ({ show, onClose, petName, petId, refetch }) => {
                                     value={formState.name}
                                     id='name'
                                     placeholder='e.g. George Smith'
-                                    onChange={(e) => 
+                                    onChange={(e) =>
                                         setFormState({
                                             ...formState,
                                             name: e.target.value
                                         })
                                     }
                                     required
-                                /> 
+                                />
                             </div>
                             <div className='input-label'>
                                 <label htmlFor='email'>Email</label>
@@ -80,7 +96,7 @@ const ApplicationFormModal = ({ show, onClose, petName, petId, refetch }) => {
                                     value={formState.email}
                                     id='email'
                                     placeholder='e.g. georgesmith@gmail.com'
-                                    onChange={(e) => 
+                                    onChange={(e) =>
                                         setFormState({
                                             ...formState,
                                             email: e.target.value
@@ -92,7 +108,7 @@ const ApplicationFormModal = ({ show, onClose, petName, petId, refetch }) => {
                         </div>
                         <div className='input-label'>
                             <label htmlFor='applicantDesription'>Tell the owner what makes you the best fit for their pet:</label>
-                            <textarea 
+                            <textarea
                                 id='applicantDescription'
                                 value={formState.description}
                                 placeholder='I am the best fit because...'
