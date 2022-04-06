@@ -21,6 +21,4 @@ function App() {
   );
 }
 
-//use params
-
 export default App;
