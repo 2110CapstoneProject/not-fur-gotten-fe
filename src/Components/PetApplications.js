@@ -1,8 +1,9 @@
 import React from 'react';
-import Header from './Header';
-import ApplicationContainer from './ApplicationsContainer';
 import { useParams } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
+import Header from './Header';
+import Loader from './Loader';
+import ApplicationContainer from './ApplicationsContainer';
 import '../Styles/PetApplications.scss';
 
 
@@ -26,7 +27,7 @@ const PetApplications = () => {
 
 
   if (loading) {
-    return <p>Loading...</p>
+    return <Loader />
   }
   if (error) {
     return <p>{error}</p>
