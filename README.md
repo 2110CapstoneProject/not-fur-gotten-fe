@@ -1,5 +1,9 @@
 # Not Furgotten
 
+Welcome to Not Furgotten! This is an application that partners individuals who are no longer able to care for their pets with people who would like to adopt them. If you are an animal lover, you have come to the right place. 
+
+Please see deployed link [here](https://not-fur-gotten-fe.herokuapp.com/)
+
 ## TABLE OF CONTENTS
 - [Project Overview](#project-overview)
 - [Future Features](#future-features)
@@ -8,15 +12,21 @@
 - [Authors/Links](#authorslinks)
 - [Credit](#credit)
 
-## ABSTRACT (WHAT, HOW, WHY)
-Welcome to Not Furgotten! This is an application that partners individuals who are no longer able to care for their pets with people who would like to adopt them. 
-- INCLUDE PLENTY OF GIFS OF WORKING PROJ
+## OVERVIEW
+Not Furgotten is a Capstone project at the Turing School of Software and Design that was built with `create-react-app` and tested using `Cypress`. This Capstone Project allowed students from the Frontend Program to work with students from the Backend Program.  Together we seemlessly learned a stretch technology - `GraphQL` and `Apollo Client`.  On this website, a user can put their beloved pet up for adoption by filling out a form telling a little about themselves and their loveable pet. They can also upload an image of their pet to be displayed on the adoption page.  A user who is looking to adopt a pet will be directed to the home page where they can browse all the pets that are up for adoption.  Once they select one, they can read all the pet information shared by the owner and if they desire, they can also choose to read about the pet's current owner. Once they have selected a pet they would like to adopt, a user will be directed to an application form to tell about themselves.  The current owner is able to see all the applications of people interested in adopting their pet.
 
+Below are some GIFs showing off the features of the Not Furgotten Website:  
+![Place Pet Up for Adoption](https://media.giphy.com/media/sZT8b1r3y6fyzDuMBm/giphy.gif)
+
+![Pet information page](https://media.giphy.com/media/erEd7Udj4hOq8yoqaL/giphy.gif)  
+
+![Pet Application page](https://media.giphy.com/media/WplDYArTG8YOyG0HUq/giphy.gif)
 ## FUTURE FEATURES
 In the future, we would want to:
+- Having a login feature, one for the re-homer, and then one for the user who wants to adopt a pet.
 - Add a delete feature to the applications page
 - When a re-homer chooses which application they want to follow through on, and then chooses the new owner/home, an administrative feature which removes the newly re-homed pet from the list of pets available for adoption. 
-- Having a login feature, one for the re-homer, and then one for the user who wants to adopt a pet.
+
 
 ## TECHNOLOGIES USED 
 
@@ -41,13 +51,9 @@ In the future, we would want to:
 ## INSTRUCTIONS
 - fork the repository
 - copy the SSH clone address
-- run ```git clone [remote-address]``` in your repo
+- run ```git clone git@github.com:2110CapstoneProject/not-fur-gotten-fe.git``` in your repo
 - run ```npm install``` in your terminal
-- run ```npm start``` in the Terminal visit localhost:8080
-
-- now fork and clone the APIs from: 
-- run ```npm install``` in your terminal
-- run ```npm start``` in the Terminal
+- run ```npm start``` in the Terminal visit localhost:3000
 
 ## AUTHORS/LINKS
 
@@ -56,12 +62,12 @@ In the future, we would want to:
 
 #### - AUTHORS:
 - Lexy Newby = [LinkedIn](https://www.linkedin.com/in/lexy-newby/) || [GitHub](https://github.com/anewb87)
-- Stevie = [LinkedIn](https://www.linkedin.com/in/stevieambroise/) || [GitHub](https://github.com/StevieAmb)
-- Ethan = [LinkedIn](https://www.linkedin.com/in/ethantweitmann/) || [GitHub](https://github.com/ectweitmann)
+- Stevie Ambroise = [LinkedIn](https://www.linkedin.com/in/stevieambroise/) || [GitHub](https://github.com/StevieAmb)
+- Ethan Tweitmann = [LinkedIn](https://www.linkedin.com/in/ethantweitmann/) || [GitHub](https://github.com/ectweitmann)
 - Christine = [LinkedIn](https://www.linkedin.com/in/christine-rowland/) || [GitHub](https://github.com/Fordo29)
 
 ## CREDIT
 For the loading animation, we would like to credit:
 - Jenni, and her codepen, which is [here](https://codepen.io/kylojen)
 
-## [BACK TO THE TOP!](#not-furgotten)
+#### [BACK TO THE TOP!](#not-furgotten)
