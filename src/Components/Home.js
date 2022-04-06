@@ -3,6 +3,7 @@ import { useQuery, gql } from '@apollo/client';
 import PetContainer from './PetContainer';
 import Header from './Header';
 import DonationFormModal from './DonationFormModal';
+import Loader from './Loader';
 import Error from './Error';
 import '../Styles/Home.scss';
 
@@ -22,7 +23,7 @@ const Home = () => {
   console.log(error)
 
   if (loading) {
-    return <p>Loading...</p>
+    return <Loader />
   }
   if (error) {
     return <Error error={error} />
