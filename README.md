@@ -61,7 +61,7 @@ In the future, we would want to:
 - Christine = [LinkedIn](https://www.linkedin.com/in/christine-rowland/) || [GitHub](https://github.com/Fordo29)
 
 ## CREDIT
-- For the loading animation, we would like to credit:
+For the loading animation, we would like to credit:
 - Jenni, and her codepen, which is [here](https://codepen.io/kylojen)
 
 ## [BACK TO THE TOP!]()
