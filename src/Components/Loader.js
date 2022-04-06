@@ -52,7 +52,7 @@ const Loader = () => {
       <div className="pad small-4"></div>
     </div>
       
-    <div class="paw-print-7">
+    <div className="paw-print-7">
       <div className="pad large"></div>
       <div className="pad small-1"></div>
       <div className="pad small-2"></div>
