@@ -82,7 +82,6 @@ const DonationFormModal = ({ show, onClose, refetch }) => {
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         setFormState({
           ...formState,
           imageUrl: response.secure_url
