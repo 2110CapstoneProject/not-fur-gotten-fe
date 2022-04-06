@@ -1,7 +1,77 @@
 import React from 'react';
 import '../Styles/Loader.scss';
 
-const Loader = () => {
+const Loader = ({ heroBanner }) => {
+  if (heroBanner) {
+    return (
+      <div id="banner-paws">
+        <div className="paw-print-1">
+          <div className="pad large white"></div>
+          <div className="pad small-1 white"></div>
+          <div className="pad small-2 white"></div>
+          <div className="pad small-3 white"></div>
+          <div className="pad small-4 white"></div>
+        </div>
+
+        <div className="paw-print-2">
+          <div className="pad large white"></div>
+          <div className="pad small-1 white"></div>
+          <div className="pad small-2 white"></div>
+          <div className="pad small-3 white"></div>
+          <div className="pad small-4 white"></div>
+        </div>
+
+        <div className="paw-print-3">
+          <div className="pad large white"></div>
+          <div className="pad small-1 white"></div>
+          <div className="pad small-2 white"></div>
+          <div className="pad small-3 white"></div>
+          <div className="pad small-4 white"></div>
+        </div>
+
+        <div className="paw-print-4">
+          <div className="pad large white"></div>
+          <div className="pad small-1 white"></div>
+          <div className="pad small-2 white"></div>
+          <div className="pad small-3 white"></div>
+          <div className="pad small-4 white"></div>
+        </div>
+
+        <div className="paw-print-5">
+          <div className="pad large white"></div>
+          <div className="pad small-1 white"></div>
+          <div className="pad small-2 white"></div>
+          <div className="pad small-3 white"></div>
+          <div className="pad small-4 white"></div>
+        </div>
+
+        <div className="paw-print-6">
+          <div className="pad large white"></div>
+          <div className="pad small-1 white"></div>
+          <div className="pad small-2 white"></div>
+          <div className="pad small-3 white"></div>
+          <div className="pad small-4 white"></div>
+        </div>
+
+        <div className="paw-print-7">
+          <div className="pad large white"></div>
+          <div className="pad small-1 white"></div>
+          <div className="pad small-2 white"></div>
+          <div className="pad small-3 white"></div>
+          <div className="pad small-4 white"></div>
+        </div>
+
+        <div className="paw-print-8">
+          <div className="pad large white"></div>
+          <div className="pad small-1 white"></div>
+          <div className="pad small-2 white"></div>
+          <div className="pad small-3 white"></div>
+          <div className="pad small-4 white"></div>
+        </div>
+      </div>
+    )
+  }
+
   return (
   <div className='loader-image'>
     <div className="paw-print-1">
@@ -11,23 +81,23 @@ const Loader = () => {
       <div className="pad small-3"></div>
       <div className="pad small-4"></div>
     </div>
-      
+
     <div className="paw-print-2">
       <div className="pad large"></div>
       <div className="pad small-1"></div>
       <div className="pad small-2"></div>
       <div className="pad small-3"></div>
       <div className="pad small-4"></div>
-    </div>    
-      
+    </div>
+
     <div className="paw-print-3">
       <div className="pad large"></div>
       <div className="pad small-1"></div>
       <div className="pad small-2"></div>
       <div className="pad small-3"></div>
       <div className="pad small-4"></div>
-    </div>    
-      
+    </div>
+
     <div className="paw-print-4">
       <div className="pad large"></div>
       <div className="pad small-1"></div>
@@ -35,7 +105,7 @@ const Loader = () => {
       <div className="pad small-3"></div>
       <div className="pad small-4"></div>
     </div>
-      
+
     <div className="paw-print-5">
       <div className="pad large"></div>
       <div className="pad small-1"></div>
@@ -43,7 +113,7 @@ const Loader = () => {
       <div className="pad small-3"></div>
       <div className="pad small-4"></div>
     </div>
-      
+
     <div className="paw-print-6">
       <div className="pad large"></div>
       <div className="pad small-1"></div>
@@ -51,7 +121,7 @@ const Loader = () => {
       <div className="pad small-3"></div>
       <div className="pad small-4"></div>
     </div>
-      
+
     <div className="paw-print-7">
       <div className="pad large"></div>
       <div className="pad small-1"></div>

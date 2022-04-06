@@ -34,6 +34,7 @@ const Home = () => {
       <section className='hero-banner'>
         <h2 className="hero-banner-text">Find a forever home for your best friend.</h2>
         <button onClick={() => setShow(true)} className="rehome-button">Rehome Your Pet</button>
+        <Loader heroBanner={true}/>
       </section>
       <PetContainer pets={data.getAllPets}/>
       <DonationFormModal
