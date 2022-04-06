@@ -12,7 +12,10 @@ Welcome to Not Furgotten! This is an application that partners individuals who a
 - INCLUDE PLENTY OF GIFS OF WORKING PROJ
 
 ## FUTURE FEATURES
-- 
+In the future, we would want to:
+- Add a delete feature to the applications page
+- When a re-homer chooses which application they want to follow through on, and then chooses the new owner/home, an administrative feature which removes the newly re-homed pet from the list of pets available for adoption. 
+- Having a login feature, one for the re-homer, and then one for the user who wants to adopt a pet.
 
 ## TECHNOLOGIES USED 
 
