@@ -20,7 +20,6 @@ const GET_PETS = gql`
 const Home = () => {
   const [show, setShow] = useState(false)
   const { loading, error, data } = useQuery(GET_PETS);
-  console.log(error)
 
   if (loading) {
     return <Loader />

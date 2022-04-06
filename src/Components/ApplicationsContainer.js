@@ -7,6 +7,7 @@ const ApplicationContainer = (apps) => {
   let allApplications = apps.apps.applications.map(application => {
     return (
       <ApplicationCard
+          key={`${application.email}${Date.now()}`}
           name={application.name}
           email={application.email}
           description={application.description}
