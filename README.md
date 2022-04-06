@@ -20,7 +20,9 @@ Below are some GIFs showing off the features of the Not Furgotten Website:
 
 ![Pet information page](https://media.giphy.com/media/erEd7Udj4hOq8yoqaL/giphy.gif)  
 
-![Pet Application page](https://media.giphy.com/media/WplDYArTG8YOyG0HUq/giphy.gif)
+![Pet Application page](https://media.giphy.com/media/WplDYArTG8YOyG0HUq/giphy.gif) 
+
+
 ## FUTURE FEATURES
 In the future, we would want to:
 - Having a login feature, one for the re-homer, and then one for the user who wants to adopt a pet.
@@ -44,7 +46,6 @@ In the future, we would want to:
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 ![Atom](https://img.shields.io/badge/Atom-%2366595C.svg?style=for-the-badge&logo=atom&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
