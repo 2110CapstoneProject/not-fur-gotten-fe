@@ -13,6 +13,7 @@ const PetContainer = ({ pets }) => {
     petCards = pets.map(pet => {
       return (
         <PetCard
+          key={pet.id}
           id={pet.id}
           name={pet.name}
           image={pet.image}
