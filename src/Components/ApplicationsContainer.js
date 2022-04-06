@@ -13,7 +13,7 @@ const ApplicationContainer = (apps) => {
       />
     )
   })
-  let display = allApplications.length ? allApplications : <p className='no-applications-section'>No applications quite yet.</p>
+  let display = allApplications.length ? allApplications : <p className='no-results'>No applications quite yet.</p>
   return (
     <section className='application-container'>
       {display}
