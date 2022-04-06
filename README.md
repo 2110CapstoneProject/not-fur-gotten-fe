@@ -6,6 +6,7 @@
 - [Tech Stack](#technologies-used)
 - [Install Instructions](#instructions)
 - [Authors/Links](#authorslinks)
+- [Credit](#credit)
 
 ## ABSTRACT (WHAT, HOW, WHY)
 Welcome to Not Furgotten! This is an application that partners individuals who are no longer able to care for their pets with people who would like to adopt them. 
@@ -58,5 +59,9 @@ In the future, we would want to:
 - Stevie = [LinkedIn](https://www.linkedin.com/in/stevieambroise/) || [GitHub](https://github.com/StevieAmb)
 - Ethan = [LinkedIn](https://www.linkedin.com/in/ethantweitmann/) || [GitHub](https://github.com/ectweitmann)
 - Christine = [LinkedIn](https://www.linkedin.com/in/christine-rowland/) || [GitHub](https://github.com/Fordo29)
+
+## CREDIT
+- For the loading animation, we would like to credit:
+- Jenni, and her codepen, which is [here](https://codepen.io/kylojen)
 
 ## [BACK TO THE TOP!]()
