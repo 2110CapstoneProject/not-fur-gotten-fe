@@ -64,4 +64,4 @@ In the future, we would want to:
 For the loading animation, we would like to credit:
 - Jenni, and her codepen, which is [here](https://codepen.io/kylojen)
 
-## [BACK TO THE TOP!]()
+## [BACK TO THE TOP!](#not-furgotten)
