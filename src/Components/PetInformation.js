@@ -4,11 +4,11 @@ import ApplicationFormModal from './ApplicationFormModal';
 import '../Styles/PetInformation.scss';
 
 const PetInformation = ({
-  id, 
-  name, 
-  gender, 
-  species, 
-  description, 
+  id,
+  name,
+  gender,
+  species,
+  description,
   age,
   image,
   setOwnerInfo,
@@ -36,18 +36,18 @@ const PetInformation = ({
           </div>
         </div>
         <div className='pet-image'>
-          <img src={image}/>
+          <img src={image} alt={name}/>
         </div>
       </div>
       <div className='button-container'>
         <Link to={`/pet/${id}/applications`}>
           <button className='view-app-button'>View Applications</button>
         </Link>
-        <button 
-          onClick={() => setShow(true)} 
+        <button
+          onClick={() => setShow(true)}
           className='submit-app-button'>Application to Adopt
         </button>
-        <ApplicationFormModal 
+        <ApplicationFormModal
           petId={id}
           petName={name}
           show={show}
