@@ -58,7 +58,7 @@ In the future, we would want to:
 
 ## AUTHORS/LINKS
 
-#### Project
+#### Project Links
 - [Project Board](https://github.com/orgs/2110CapstoneProject/projects/1)
 - [Wireframe](https://miro.com/app/board/uXjVODUlug4=/)
 
