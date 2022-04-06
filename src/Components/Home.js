@@ -3,6 +3,7 @@ import { useQuery, gql } from '@apollo/client';
 import PetContainer from './PetContainer';
 import Header from './Header';
 import DonationFormModal from './DonationFormModal';
+import Error from './Error';
 import '../Styles/Home.scss';
 
 const GET_PETS = gql`
@@ -18,13 +19,13 @@ const GET_PETS = gql`
 const Home = () => {
   const [show, setShow] = useState(false)
   const { loading, error, data } = useQuery(GET_PETS);
-  
+  console.log(error)
 
   if (loading) {
     return <p>Loading...</p>
   }
   if (error) {
-    return <p>{error}</p>
+    return <Error error={error} />
   }
 
   return (
