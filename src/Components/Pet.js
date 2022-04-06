@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Header from './Header';
 import OwnerInformation from './OwnerInformation';
 import PetInformation from './PetInformation';
+import Loader from './Loader';
 import Error from './Error';
 import '../Styles/Pet.scss';
 
@@ -38,7 +39,7 @@ const Pet = () => {
   const { loading, error, data } = useQuery(GET_SINGLE_PET, {variables: {id}})
 
   if (loading) {
-    return <p>Loading...</p>
+    return <Loader />
   }
   if (error) {
     return <Error error={error} />
