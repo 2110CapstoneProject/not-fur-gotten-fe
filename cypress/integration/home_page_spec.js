@@ -1,12 +1,26 @@
 describe('Not Fur-gotten Home Page User Flow', () => {
   beforeEach(() => {
-    cy.intercept(
+        cy.intercept(
       {
         method: 'POST',
         url: 'https://not-fur-gotten-be.herokuapp.com/graphql',
         headers: {
           'x-gql-operation-name': 'getAllPets',
         }
+      },
+      {
+        fixture: 'getNoPets.json'
+      }
+    ).as('noPets');
+
+    cy.intercept(
+      {
+        method: 'POST',
+        url: 'https://not-fur-gotten-be.herokuapp.com/graphql',
+        headers: {
+          'x-gql-operation-name': 'getAllPets',
+        },
+       times: 1 
       },
       {
         fixture: 'newPetHomePage.json'
@@ -121,6 +135,14 @@ describe('Not Fur-gotten Home Page User Flow', () => {
       .get('img[alt="Jack"]')
   });
 
+  it('Should display a message when no pets are available for adoption', () => {
+    cy.visit('http://localhost:3000/')
+    cy.reload()
+    cy.reload()
+    cy.wait('@noPets')
+      .get('.no-results').contains('No pets are currently up for adoption.')
+  })
+
   it('should be able to navigate to a particular pet page on click', () => {
     cy.visit('http://localhost:3000/')
     cy.wait('@getAllPets')
@@ -129,4 +151,5 @@ describe('Not Fur-gotten Home Page User Flow', () => {
       expect(loc.href).to.eq('http://localhost:3000/pet/1');
     });
   });
+
 });

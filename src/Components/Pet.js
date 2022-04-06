@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Header from './Header';
 import OwnerInformation from './OwnerInformation';
 import PetInformation from './PetInformation';
+import Error from './Error';
 import '../Styles/Pet.scss';
 
 
@@ -40,7 +41,7 @@ const Pet = () => {
     return <p>Loading...</p>
   }
   if (error) {
-    return <p>{error}</p>
+    return <Error error={error} />
   }
 
   let currentView;

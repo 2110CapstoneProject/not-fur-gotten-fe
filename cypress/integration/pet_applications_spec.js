@@ -45,4 +45,13 @@ describe('Pet Applications Component', () => {
       .get('p')
       .contains('I love cats')
   })
+
+  it('Should display a message when there are no applications for the pet', () => {
+    cy.visit('http://localhost:3000/pet/1/applications')
+    cy.reload()
+    cy.wait('@zeroPetApplications')
+      .get('header')
+      .get('.no-results').contains('No applications quite yet')
+
+  })
 })
