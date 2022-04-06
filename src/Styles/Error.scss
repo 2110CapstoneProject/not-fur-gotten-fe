@@ -1,10 +1,24 @@
 @import '_variables.scss';
 
 .message-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
   margin-top: 100px;
 }
 
 .error-message {
   font-size: xxx-large;
+  font-family: 'Fredoka One', cursive;
 }
 
+.error-button {
+  background-color: $darkPurple;
+  color: $white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: 150px;
+  font-weight: bold;
+}
