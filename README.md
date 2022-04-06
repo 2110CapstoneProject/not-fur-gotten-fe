@@ -57,14 +57,21 @@ In the future, we would want to:
 
 ## AUTHORS/LINKS
 
-#### - Project
+#### Project
 - [Project Board](https://github.com/orgs/2110CapstoneProject/projects/1)
 
-#### - AUTHORS:
+#### AUTHORS:
+##### Frontend Team
 - Lexy Newby = [LinkedIn](https://www.linkedin.com/in/lexy-newby/) || [GitHub](https://github.com/anewb87)
 - Stevie Ambroise = [LinkedIn](https://www.linkedin.com/in/stevieambroise/) || [GitHub](https://github.com/StevieAmb)
 - Ethan Tweitmann = [LinkedIn](https://www.linkedin.com/in/ethantweitmann/) || [GitHub](https://github.com/ectweitmann)
 - Christine = [LinkedIn](https://www.linkedin.com/in/christine-rowland/) || [GitHub](https://github.com/Fordo29)
+
+##### Backend Team
+Link to the Backend Repository [here](https://github.com/2110CapstoneProject/not-fur-gotten-be)
+- Kerri Hoffman = [LinkedIn](https://www.linkedin.com/in/kerri-hoffmann/) || [GitHub](https://github.com/kbhoffmann)
+- Karan Mehta = [LinkedIn]() || [GitHub]()
+- Croix Kimmel = [LinkedIn](https://www.linkedin.com/in/croix-kimmel/) || [GitHub](https://github.com/croixk)
 
 ## CREDIT
 For the loading animation, we would like to credit:
