@@ -1,4 +1,4 @@
-![Not Furgotten](https://res.cloudinary.com/dzfyvxcwi/image/upload/v1649289673/Not_Furgoteen_logo_x9lvde.png)
+# Not Furgotten
 
 Welcome to Not Furgotten! This is an application that partners individuals who are no longer able to care for their pets with people who would like to adopt them. If you are an animal lover, you have come to the right place. 
 
