@@ -26,8 +26,9 @@ Below are some GIFs showing off the features of the Not Furgotten Website:
 ## FUTURE FEATURES
 In the future, we would want to:
 - Having a login feature, one for the re-homer, and then one for the user who wants to adopt a pet.
-- Add a delete feature to the applications page
-- When a re-homer chooses which application they want to follow through on, and then chooses the new owner/home, an administrative feature which removes the newly re-homed pet from the list of pets available for adoption. 
+- Add a delete feature to the applications page.
+- When a re-homer chooses which application they want to follow through on, and then chooses the new owner/home, an administrative feature which removes the newly re-homed pet from the list of pets available for adoption.
+- Make the application mobile responsive.
 
 
 ## TECHNOLOGIES USED 
