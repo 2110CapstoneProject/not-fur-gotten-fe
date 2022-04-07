@@ -1,4 +1,4 @@
-# Not Furgotten
+![Not Furgotten](https://res.cloudinary.com/dzfyvxcwi/image/upload/v1649289673/Not_Furgoteen_logo_x9lvde.png)
 
 Welcome to Not Furgotten! This is an application that partners individuals who are no longer able to care for their pets with people who would like to adopt them. If you are an animal lover, you have come to the right place. 
 
@@ -64,16 +64,23 @@ In the future, we would want to:
 
 #### AUTHORS:
 ##### Frontend Team
-- Lexy Newby = [LinkedIn](https://www.linkedin.com/in/lexy-newby/) || [GitHub](https://github.com/anewb87)
-- Stevie Ambroise = [LinkedIn](https://www.linkedin.com/in/stevieambroise/) || [GitHub](https://github.com/StevieAmb)
-- Ethan Tweitmann = [LinkedIn](https://www.linkedin.com/in/ethantweitmann/) || [GitHub](https://github.com/ectweitmann)
-- Christine = [LinkedIn](https://www.linkedin.com/in/christine-rowland/) || [GitHub](https://github.com/Fordo29)
+- Lexy Newby: 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lexy-newby/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/anewb87)
+- Stevie Ambroise: 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stevieambroise/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/StevieAmb)
+- Ethan Tweitmann: 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ethantweitmann/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ectweitmann)
+- Christine Rowland: 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/christine-rowland/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Fordo29)
 
 ##### Backend Team
 Link to the Backend Repository [here](https://github.com/2110CapstoneProject/not-fur-gotten-be)
-- Kerri Hoffman = [LinkedIn](https://www.linkedin.com/in/kerri-hoffmann/) || [GitHub](https://github.com/kbhoffmann)
-- Karan Mehta = [LinkedIn]() || [GitHub]()
-- Croix Kimmel = [LinkedIn](https://www.linkedin.com/in/croix-kimmel/) || [GitHub](https://github.com/croixk)
+- Kerri Hoffman: 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kerri-hoffmann/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kbhoffmann)
+- Karan Mehta: 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/karan-mehta-2b706093/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/karanm645)
+- Croix Kimmel: 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/croix-kimmel/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/croixk)
 
 ## CREDIT
 For the loading animation, we would like to credit:
