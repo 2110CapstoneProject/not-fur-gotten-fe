@@ -20,7 +20,7 @@ describe('Not Fur-gotten Home Page User Flow', () => {
         headers: {
           'x-gql-operation-name': 'getAllPets',
         },
-       times: 1 
+       times: 1
       },
       {
         fixture: 'newPetHomePage.json'
@@ -87,8 +87,6 @@ describe('Not Fur-gotten Home Page User Flow', () => {
       .contains('Add an image of your pet:')
       .get('[data-testid="image-upload"]')
       .should('exist')
-      .get('.upload-button')
-      .contains('Upload')
       .get('button')
       .contains('Submit')
   });
@@ -128,10 +126,8 @@ describe('Not Fur-gotten Home Page User Flow', () => {
       .type('He\'s a little trickster. Keep an eye on your treasures, he has sticky fingers!')
       .get('input[type="file"]')
       .selectFile('src/test-file-image.jpg')
-      .get('.upload-button').click()
-      .wait('@restfulPOST')
       .get('.submit-button').click()
-      .wait(['@newPetAdded', '@petSubmission'])
+      .wait(['@restfulPOST', '@newPetAdded', '@petSubmission'])
       .get('img[alt="Jack"]')
   });
 

@@ -96,6 +96,17 @@ label {
   width: 70px;
 }
 
+#imageUpload::after {
+}
+
 .upload-button {
   font-family: revert;
+}
+
+.disabled {
+  background-color: darkgray;
+  &:hover {
+    transform: none;
+    cursor: default;
+  }
 }

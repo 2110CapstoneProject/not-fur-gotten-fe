@@ -39,7 +39,8 @@ const CREATE_PET = gql`
     }
 `
 
-const DonationFormModal = ({ show, onClose, refetch }) => {
+const DonationFormModal = ({ show, onClose }) => {
+  const [status, setStatus] = useState(false);
   const [file, setFile] = useState(null);
   const [formState, setFormState] = useState({
     ownerName: '',
@@ -51,7 +52,6 @@ const DonationFormModal = ({ show, onClose, refetch }) => {
     gender: '',
     petDescription: '',
     imageName: '',
-    imageUrl: ''
   })
   const [createPet] = useMutation(CREATE_PET, {
     refetchQueries: [
@@ -72,22 +72,42 @@ const DonationFormModal = ({ show, onClose, refetch }) => {
     setFile(picture);
   }
 
-  const uploadImage = () => {
+  const uploadImage = async () => {
+    setStatus(true);
     const formData = new FormData();
+    if (!file) {throw new Error('need a file to upload')}
     formData.append('file', file);
     formData.append('upload_preset', 'b3somrig');
-    fetch('https://api.cloudinary.com/v1_1/dzfyvxcwi/upload', {
+    const response = await fetch('https://api.cloudinary.com/v1_1/dzfyvxcwi/upload', {
       method: 'POST',
       body: formData,
-    })
-      .then(response => response.json())
-      .then(response => {
-        setFormState({
-          ...formState,
-          imageUrl: response.secure_url
-        });
-      })
-      .catch(err => console.log(err));
+    });
+    const data = await response.json();
+    const imageUrl = data.secure_url;
+    return imageUrl;
+  }
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    try {
+      const imageUrl = await uploadImage();
+      createPet({ variables: {
+        name: formState.petName,
+        age: parseInt(formState.age),
+        gender: formState.gender,
+        description: formState.petDescription,
+        species: formState.type,
+        ownerStory: formState.ownerStory,
+        ownerEmail: formState.ownerEmail,
+        ownerName: formState.ownerName,
+        image: imageUrl
+      }});
+      clearInputs();
+      onClose();
+      setStatus(false);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const clearInputs = () => {
@@ -111,23 +131,7 @@ const DonationFormModal = ({ show, onClose, refetch }) => {
       <form
         className="donation-form"
         onClick={(e) => e.stopPropagation()}
-        onSubmit={(e) => {
-            e.preventDefault();
-            createPet({ variables: {
-              name: formState.petName,
-              age: parseInt(formState.age),
-              gender: formState.gender,
-              description: formState.petDescription,
-              species: formState.type,
-              ownerStory: formState.ownerStory,
-              ownerEmail: formState.ownerEmail,
-              ownerName: formState.ownerName,
-              image: formState.imageUrl
-            }});
-            clearInputs();
-            onClose();
-        }}
-      >
+        onSubmit={(e) => submitForm(e)}>
         <h2 className="form-title">Donation Form</h2>
         <section className="owner-info-container">
           <h3 className="form-subtitle">Owner Information</h3>
@@ -283,10 +287,9 @@ const DonationFormModal = ({ show, onClose, refetch }) => {
               onChange={handlePic}
               required
             />
-            <button className="upload-button" type="button" onClick={uploadImage}>Upload</button>
           </div>
         </section>
-        <button className="submit-button">Submit</button>
+        <button className={`submit-button ${status ? 'disabled' : ''}`} disabled={status}>Submit</button>
       </form>
     </div>
   );
