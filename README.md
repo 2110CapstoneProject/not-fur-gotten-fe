@@ -63,7 +63,7 @@ In the future, we would want to:
 
 #### Project Links
 - [Project Board](https://github.com/orgs/2110CapstoneProject/projects/1)
-- [Wireframe](https://miro.com/app/board/uXjVODUlug4=/)
+- [Wireframe](https://miro.com/app/board/uXjVODUlug4=/?share_link_id=649653039923)
 
 #### AUTHORS:
 ##### Frontend Team
